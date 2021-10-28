@@ -1,0 +1,9 @@
+alias ls="ls -G"
+alias ll="ls -al"
+
+alias ctags="`brew --prefix`/bin/ctags"
+
+alias grep="grep --color=auto"
+
+export PATH=$HOME/DevEnv/bin/script/tools:$PATH
+
