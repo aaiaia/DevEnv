@@ -1,0 +1,40 @@
+#!/bin/sh
+
+version="find variables for project folder"
+
+usage="Usage: $0 [VARIABLE NAME]"
+
+if		[ $# -lt 1 ]; then
+	echo $0 "!!! Check Syntax, needs more arguments"
+	exit 1
+elif	[ $# -eq 1 ] ; then
+	find ./ -type f \( -iname "*.c" -o		-iname "*.cpp" -o	-iname "*.h" -o		-iname "*.v" -o \
+						-iname "*.vhd" -o	-iname "*.cfg" !	-iname "*.exe" ! 	-iname "*.swp" ! \
+						-iname ".svn" !		-iname "_*" !		-iname "Debug" !	-iname "Release" ! \
+						-iname "*.bak" !	-iname "*.log" !	-iname "*.ncd" !	-iname "*.ng**" ! \
+						-iname "*.bit" !	-iname "*." !		-iname "*." \) | xargs grep -n -w --color=auto $1
+	exit 1
+elif	[ $# -eq 2 ]; then
+	if	[ "$1" = "-a" ]; then
+		find ./ -type f \(	-iname "*.*" !		-iname "*.exe" ! 	-iname "*.swp" ! \
+							-iname ".svn" !		-iname "_*" !		-iname "Debug" !	-iname "Release" ! \
+							-iname "*.bak" !	-iname "*.log" !	-iname "*.ncd" !	-iname "*.ng**" ! \
+							-iname "*.bit" !	-iname "*." !		-iname "*." \) | xargs grep -n -w --color=auto $2
+	else
+		find $1 -type f \(	-iname "*.c" -o		-iname "*.cpp" -o	-iname "*.h" -o		-iname "*.v" -o \
+							-iname "*.vhd" -o	-iname "*.cfg" !	-iname "*.exe" ! 	-iname "*.swp" ! \
+							-iname ".svn" !		-iname "_*" !		-iname "Debug" !	-iname "Release" ! \
+							-iname "*.bak" !	-iname "*.log" !	-iname "*.ncd" !	-iname "*.ng**" ! \
+							-iname "*.bit" !	-iname "*." !		-iname "*." \) | xargs grep -n -w --color=auto $2
+	fi
+	exit 1
+elif	[ $# -eq 3 ]; then
+	find $1 -type f \(	-iname $3 !			-iname "*.exe" ! 	-iname "*.swp" ! \
+						-iname ".svn" !		-iname "_*" !		-iname "Debug" !	-iname "Release" ! \
+						-iname "*.bak" !	-iname "*.log" !	-iname "*.ncd" !	-iname "*.ng**" ! \
+						-iname "*.bit" !	-iname "*." !		-iname "*." \) | xargs grep -n -w --color=auto $2
+	exit 1
+else
+	echo $0 "!!! Check Syntax"
+fi
+
