@@ -4,5 +4,5 @@ version="find variables for project folder"
 
 usage="Usage: $0 [VARIABLE NAME]"
 
-find ./ -type f \( -iname "*" ! -iname ".svn" ! -iname "*.bak" \) | xargs grep -n --text --color=auto $1
+find ./ -type f \( -iname "*" ! -iname ".svn" ! -iname "*.bak" ! -iname "tags" \) | xargs grep -n --text --color=auto $1
 
