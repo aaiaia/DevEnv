@@ -1,0 +1,34 @@
+#!/bin/sh
+
+version="find variables for project folder"
+
+usage="Usage: [CMD] [VARIABLE NAME]\nUsage: [CMD] [PATH] [VARIABLE NAME]\nUsage: [CMD] [PATH] [VARIABLE NAME] [FILE]"
+
+echo "Numer of arguments : $#"
+
+if		[ $# -lt 1 ]; then
+	echo "!!! Check Syntax"
+	echo "$0 [keyword1] [keyword2] [keyword3] [keyword4] ... "
+	exit 1
+else
+	for i in $* 
+	do
+		concat_str+=$i"\|"
+	done
+
+	concat_str=${concat_str/%\\\|/}
+
+	echo "concatened keyword is $concat_str"
+
+	find ./ -type f \( -iname "*" ! -iname "*.swp" ! -iname ".svn" ! -iname "*.bak" ! -iname "tags" \) | xargs grep -n -w --text --color=auto "$concat_str"
+
+#	find ./ -type f \( -iname "*.c" -o		-iname "*.cpp" -o	-iname "*.h" -o		-iname "*.v" -o \
+#						-iname "*.vhd" -o	-iname "*.py" -o \
+#						-iname "*.cfg" !	-iname "*.exe" !	-iname "*.swp" ! \
+#						-iname ".svn" !		-iname "_*" !		-iname "Debug" !	-iname "Release" ! \
+#						-iname "*.bak" !	-iname "*.log" !	-iname "*.ncd" !	-iname "*.ng**" ! \
+#						-iname "*.bit" !	-iname "*." !		-iname "*." \) | xargs grep -n -w--text --color=auto {$concat_str}
+fi
+#
+#sleep 0.1
+
