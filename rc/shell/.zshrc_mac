@@ -1,7 +1,7 @@
 alias ls="ls -G"
 alias ll="ls -al"
 
-alias ctags="`brew --prefix`/bin/ctags"
+alias ctags="`brew --prefix`/bin/ctags --exclude={.metadata,.svn,.git}"
 
 alias grep="grep --color=auto"
 
