@@ -1,3 +1,4 @@
 cd ~/DevEnv
+echo 'update developments environments using git'
 git pull
 cd ~/
