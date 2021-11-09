@@ -21,14 +21,5 @@ else
 	echo "concatened keyword is $concat_str"
 
 	find ./ -type f \( -iname "*" ! -iname "*.swp" ! -iname ".svn" ! -iname "*.bak" ! -iname "tags" \) | xargs grep -n --text --color=auto $concat_str
-
-#	find ./ -type f \( -iname "*.c" -o		-iname "*.cpp" -o	-iname "*.h" -o		-iname "*.v" -o \
-#						-iname "*.vhd" -o	-iname "*.py" -o \
-#						-iname "*.cfg" !	-iname "*.exe" !	-iname "*.swp" ! \
-#						-iname ".svn" !		-iname "_*" !		-iname "Debug" !	-iname "Release" ! \
-#						-iname "*.bak" !	-iname "*.log" !	-iname "*.ncd" !	-iname "*.ng**" ! \
-#						-iname "*.bit" !	-iname "*." !		-iname "*." \) | xargs grep -n --text --color=auto $concat_str
 fi
-#
-#sleep 0.1
 

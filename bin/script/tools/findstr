@@ -2,46 +2,39 @@
 
 version="find variables for project folder"
 
-usage="Usage: [CMD] [VARIABLE NAME]\nUsage: [CMD] [PATH] [VARIABLE NAME]\nUsage: [CMD] [PATH] [VARIABLE NAME] [FILE]"
+usage="Usage:\t[CMD] [KEYWORD]
+\t[CMD] [PATH] [KEYWORD]
+\t[CMD] [PATH] [KEYWORD] [FILE_EXT,e.g=.json,*(=all file),*.*(all file has ext)]
+"
 
 echo "Numer of arguments : $#"
 
 if		[ $# -lt 1 ]; then
-	echo "!!! Check Syntax"
-	echo "$0 [word]"
-	echo "$0 [location] [word]"
+	echo "$usage"
 	exit 1
-elif	[ $# -eq 1 ]; then
-	echo "$0 $1"
-	find ./ -type f \( -iname "*.c" -o		-iname "*.cpp" -o	-iname "*.h" -o		-iname "*.v" -o \
+elif	[ $# -eq 1 ] ; then
+	find ./ -type f \(	-iname "*.c" -o		-iname "*.cpp" -o	-iname "*.h" -o		-iname "*.v" -o \
 						-iname "*.vhd" -o	-iname "*.py" -o \
-						-iname "*.cfg" !	-iname "*.exe" !	-iname "*.swp" ! \
+						-iname "*.cfg" !	-iname "*.exe" !	-iname "*.swp" !	-iname "tags" ! \
 						-iname ".svn" !		-iname "_*" !		-iname "Debug" !	-iname "Release" ! \
 						-iname "*.bak" !	-iname "*.log" !	-iname "*.ncd" !	-iname "*.ng**" ! \
 						-iname "*.bit" !	-iname "*." !		-iname "*." \) | xargs grep -n --text --color=auto $1
 	exit 1
 elif	[ $# -eq 2 ]; then
-#	if	[ "$1" = "-a" ]; then
-#		echo "$0 $1 $2"
-#		find ./ -type f \( -iname "*" ! -iname ".svn" ! -iname "*.out" ! -iname "*.bin" ! -iname "*.exe" ! -iname "*.swp" \) | xargs grep -n --text --color=auto $2
-#	else
-		find $1 -type f \( -iname "*.c" -o		-iname "*.cpp" -o	-iname "*.h" -o		-iname "*.v" -o \
-							-iname "*.vhd" -o	-iname "*.py" -o \
-							-iname "*.cfg" !	-iname "*.exe" !	-iname "*.swp" ! \
-							-iname ".svn" !		-iname "_*" !		-iname "Debug" !	-iname "Release" ! \
-							-iname "*.bak" !	-iname "*.log" !	-iname "*.ncd" !	-iname "*.ng**" ! \
-							-iname "*.bit" !	-iname "*." !		-iname "*." \) | xargs grep -n --text --color=auto $2
-#	fi
+	find $1 -type f \(	-iname "*.c" -o		-iname "*.cpp" -o	-iname "*.h" -o		-iname "*.v" -o \
+						-iname "*.vhd" -o	-iname "*.py" -o \
+						-iname "*.cfg" !	-iname "*.exe" !	-iname "*.swp" !	-iname "tags" ! \
+						-iname ".svn" !		-iname "_*" !		-iname "Debug" !	-iname "Release" ! \
+						-iname "*.bak" !	-iname "*.log" !	-iname "*.ncd" !	-iname "*.ng**" ! \
+						-iname "*.bit" !	-iname "*." !		-iname "*." \) | xargs grep -n --color=auto $2
 	exit 1
-#elif	[ $# -eq 4 ]; then
-#	find $1 -type f \(	-iname $3 ! \
-#						-iname ".svn" !		-iname "_*" !		-iname "Debug" !	-iname "Release" ! \
-#						-iname "*.bak" !	-iname "*.log" !	-iname "*.ncd" !	-iname "*.ng**" ! \
-#						-iname "*.bit" !	-iname "*." !		-iname "*." \) | xargs grep -n --text --color=auto $2
-#	exit 1
+elif	[ $# -eq 3 ]; then
+	find $1 -type f \(	-iname $3 !			-iname "*.exe" ! 	-iname "*.swp" ! \
+						-iname ".svn" !		-iname "_*" !		-iname "Debug" !	-iname "Release" ! \
+						-iname "*.bak" !	-iname "*.log" !	-iname "*.ncd" !	-iname "*.ng**" ! \
+						-iname "*.bit" !	-iname "*." !		-iname "*." \) | xargs grep -n --color=auto $2
+	exit 1
 else
-	echo "!!! Check Syntax"
+	echo $0 "!!! Check Syntax"
 fi
-#
-#sleep 0.1
 
