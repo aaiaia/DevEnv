@@ -1,7 +1,7 @@
 cd ~/DevEnv
-echo 'Mode to "~/DevEnv"'
+echo 'Move to "~/DevEnv"'
 echo 'Update developments environments using git'
 echo '$ git pull'
 git pull
 cd ~/
-echo 'Come back to "~/"'
+echo 'Move to "~/"'
