@@ -8,6 +8,12 @@ usage="Usage:\t[CMD] [KEYWORD]
 "
 echo "Numer of arguments : $#"
 
+args=("$@")
+for((i=0; i<$#; i++))
+do
+	echo "$i-th param = ${args[$i]}"
+done
+
 if		[ $# -lt 1 ]; then
 	echo "$usage"
 	exit 1
