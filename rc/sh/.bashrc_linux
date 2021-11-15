@@ -1,0 +1,11 @@
+#alias ls='ls -F --show-control-chars --color=auto'
+#alias ll='ls -l'
+
+#alias find_var='find ./ -name "*.c"|xargs grep -n --color=auto'
+export  PATH='~/DevEnv/bin/script/tools':$PATH
+
+alias vi='vim'
+
+alias ctags='ctags --exclude={.metadata,.svn,.git}'
+
+alias grep='grep --color=auto'
