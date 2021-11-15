@@ -25,5 +25,10 @@ set bs=2
 au Bufenter *.py set expandtab
 "au FileType py jsp set expandtab
 
+" Apply plantuml syntax
 au Bufenter *.pu set filetype=plantuml
+au Bufenter *.uml set filetype=plantuml
+au Bufenter *.puml set filetype=plantuml
+au Bufenter *.iuml set filetype=plantuml
+au Bufenter *.plantuml set filetype=plantuml
 
