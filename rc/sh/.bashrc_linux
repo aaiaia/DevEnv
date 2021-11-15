@@ -2,7 +2,7 @@
 #alias ll='ls -l'
 
 #alias find_var='find ./ -name "*.c"|xargs grep -n --color=auto'
-export  PATH='~/DevEnv/bin/script/tools':$PATH
+export  PATH='~/DevEnv/bin/slink':$PATH
 
 alias vi='vim'
 
