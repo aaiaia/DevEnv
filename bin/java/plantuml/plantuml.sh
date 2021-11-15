@@ -8,6 +8,6 @@ if		[ $# -lt 1 ]; then
 	echo "$usage"
 	exit 1
 else
-	java -jar ~/DevEnv/bin/java/plantuml.jar -verbose $@
+	java -jar ~/DevEnv/bin/java/plantuml/plantuml.jar -verbose $@
 fi
 
