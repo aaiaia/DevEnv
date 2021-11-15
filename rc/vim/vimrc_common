@@ -1,0 +1,29 @@
+set nocompatible
+set nu " 라인 표시
+if has("syntax")
+	syntax enable " 언어 문법 활성
+endif
+set hlsearch " 검색 문자열 하이라이트
+set cindent
+set autoindent " 자동 들여쓰기
+set showmatch " 중괄호 하이라이트
+set ruler " 좌표계 표시
+"colorscheme torte " 컬러 스킴
+colorscheme jellybeans " 컬러 스킴
+
+set nowrap " 한 라인이 화면의 너비를 초과할 경우 줄 바꿈 안함
+
+set listchars=extends:>,precedes:< " 한 라인이 화면의 너비를 초과할 경우, > <로 초과여부를 표시함
+
+set ls=2 " 항상 status line 표시
+
+set ts=4
+set sts=4
+set sw=4
+set bs=2
+
+au Bufenter *.py set expandtab
+"au FileType py jsp set expandtab
+
+au Bufenter *.pu set filetype=plantuml
+
