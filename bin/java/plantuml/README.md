@@ -13,6 +13,7 @@ MacOS
 
 brew install example `brew install --cask adoptopenjdk11`, `brew install --cask adoptopenjdk14`
 
+
 ## Shell Environments
 ubuntu
 1. add shell variable `JAVA_HOME="/usr/lib/jvm/java-13-openjdk-amd64"` to `/etc/environment` or user shell rc file like `~/.zshrc`, `~/.bashrc`
@@ -22,9 +23,11 @@ MacOS
 
 # Execution
 [CMD]
+
 `java -jar plantuml.jar -verbose sequenceDiagram.txt`
 
 link : https://plantuml.com/ko/faq-install
+
 
 [Script]
 
