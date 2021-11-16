@@ -1,7 +1,13 @@
+#!/bin/sh
+current_path=`pwd -P`
+echo 'Current path is "'$current_path'"'
+
 cd ~/DevEnv
 echo 'Move to "~/DevEnv"'
+
 echo 'Update developments environments using git'
 echo '$ git pull'
 git pull
-cd ~/
-echo 'Move to "~/"'
+
+cd $current_path
+echo 'Move to "'$current_path'"'
