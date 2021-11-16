@@ -24,7 +24,7 @@ MacOS
 # Execution
 [CMD]
 
-`java -jar plantuml.jar -verbose sequenceDiagram.txt`
+1. `java -jar plantuml.jar -verbose sequenceDiagram.txt`
 
 link : https://plantuml.com/ko/faq-install
 
