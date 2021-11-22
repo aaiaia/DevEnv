@@ -1,5 +1,6 @@
 #!/bin/sh
-current_path=`pwd -P`
+#current_path=`pwd -P`
+current_path=`pwd
 echo 'Current path is "'$current_path'"'
 
 cd ~/DevEnv
