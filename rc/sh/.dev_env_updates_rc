@@ -1,6 +1,7 @@
 #!/bin/sh
+echo 'Initializing... on "'$SHELL'"'
 #current_path=`pwd -P`
-current_path=`pwd`
+current_path=`pwd -P`
 echo 'Current path is "'$current_path'"'
 
 cd ~/DevEnv
@@ -10,5 +11,8 @@ echo 'Update developments environments using git'
 echo '$ git pull'
 git pull
 
-cd $current_path
-echo 'Move to "'$current_path'"'
+#cd $current_path
+#echo 'Move to "'$current_path'"'
+cd ~/
+echo 'Move to ~/'
+
