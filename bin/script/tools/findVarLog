@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 version="find variables for project folder"
 
