@@ -19,7 +19,7 @@ if		[ $# -lt 1 ]; then
 	echo "$usage"
 	exit 1
 elif	[ $# -eq 1 ] ; then
-	find ./ -type f \(	-iname "*.c" -o		-iname "*.cpp" -o	-iname "*.h" -o		-iname "*.v" -o \
+	find -L ./ -type f \(	-iname "*.c" -o		-iname "*.cpp" -o	-iname "*.h" -o		-iname "*.v" -o \
 						-iname "*.vhd" -o	-iname "*.py" -o \
 						-iname "*.cfg" !	-iname "*.exe" !	-iname "*.swp" !	-iname "tags" ! \
 						-iname ".svn" !		-iname "_*" !		-iname "Debug" !	-iname "Release" ! \
@@ -27,7 +27,7 @@ elif	[ $# -eq 1 ] ; then
 						-iname "*.bit" !	-iname "*." !		-iname "*." \) | xargs grep -n --text --color=auto $1
 	exit 1
 elif	[ $# -eq 2 ]; then
-	find $1 -type f \(	-iname "*.c" -o		-iname "*.cpp" -o	-iname "*.h" -o		-iname "*.v" -o \
+	find -L $1 -type f \(	-iname "*.c" -o		-iname "*.cpp" -o	-iname "*.h" -o		-iname "*.v" -o \
 						-iname "*.vhd" -o	-iname "*.py" -o \
 						-iname "*.cfg" !	-iname "*.exe" !	-iname "*.swp" !	-iname "tags" ! \
 						-iname ".svn" !		-iname "_*" !		-iname "Debug" !	-iname "Release" ! \
@@ -35,8 +35,9 @@ elif	[ $# -eq 2 ]; then
 						-iname "*.bit" !	-iname "*." !		-iname "*." \) | xargs grep -n --color=auto $2
 	exit 1
 elif	[ $# -eq 3 ]; then
-	find $1 -type f \(	-iname $3 !			-iname "*.exe" ! 	-iname "*.swp" ! \
+	find -L $1 -type f \(	-iname $3 -o !		-iname "*.exe" ! 	-iname "*.swp" ! \
 						-iname ".svn" !		-iname "_*" !		-iname "Debug" !	-iname "Release" ! \
+						-iname ".git" !		-iname ".github" !	\
 						-iname "*.bak" !	-iname "*.log" !	-iname "*.ncd" !	-iname "*.ng**" ! \
 						-iname "*.bit" !	-iname "*." !		-iname "*." \) | xargs grep -n --color=auto $2
 	exit 1

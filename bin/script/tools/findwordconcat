@@ -20,7 +20,7 @@ else
 
 	echo "concatened keyword is $concat_str"
 
-	find ./ -type f \( -iname "*" ! -iname "*.swp" ! -iname ".svn" ! -iname "*.bak" ! -iname "tags" \) | xargs grep -n -w --text --color=auto "$concat_str"
+	find -L ./ -type f \( -iname "*" ! -iname "*.swp" ! -iname ".svn" ! -iname "*.bak" ! -iname "tags" \) | xargs grep -n -w --text --color=auto "$concat_str"
 
 fi
 

@@ -6,6 +6,8 @@ export  PATH='~/DevEnv/bin/slink':$PATH
 
 alias vi='vim'
 
-alias ctags='ctags --exclude={.metadata,.svn,.git}'
+alias ctags='ctags --exclude={.metadata,.svn,.git,.github}'
 
 alias grep='grep --color=auto'
+
+alias find='find -L'

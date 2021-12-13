@@ -7,3 +7,4 @@ alias ctags="`brew --prefix`/bin/ctags --exclude={.metadata,.svn,.git}"
 
 alias grep="grep --color=auto"
 
+alias find="find -L"
