@@ -17,6 +17,8 @@ set listchars=extends:>,precedes:< " 한 라인이 화면의 너비를 초과할
 
 set ls=2 " 항상 status line 표시
 
+set expandtab " 탭 문자 띄어쓰기로 변환
+
 set ts=4
 set sts=4
 set sw=4
