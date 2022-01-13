@@ -24,8 +24,13 @@ set sts=4
 set sw=4
 set bs=2
 
+"au is shortend keyword of autocmd
 au Bufenter *.py set expandtab
-"au FileType py jsp set expandtab
+"au FileType py jsp set expandtaba
+
+" Apply Makefile and *.mk file rules
+au FileType *.mk set noexpandtab
+au FileType make set noexpandtab
 
 " Apply plantuml syntax
 au Bufenter *.pu set filetype=plantuml
