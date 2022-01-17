@@ -7,7 +7,10 @@ export  PATH='~/DevEnv/bin/slink':$PATH
 alias vi='vim'
 alias grep='grep --color=auto'
 alias find='find -L'
-alias diff='colordiff'
+#alias diff='diff --width=$(tput cols)'
+#alias diff='diff --width=$(tput cols)'
+alias diff='colordiff --width=$(tput cols)'
+alias colordiff='colordiff --width=$(tput cols)'
 #alias ls='ls -F --show-control-chars --color=auto'
 #alias ll='ls -l'
 
