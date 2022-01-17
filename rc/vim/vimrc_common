@@ -39,3 +39,9 @@ au Bufenter *.puml set filetype=plantuml
 au Bufenter *.iuml set filetype=plantuml
 au Bufenter *.plantuml set filetype=plantuml
 
+" In diff, colorscheme setup
+if &diff
+    "colorscheme molokai
+    "colorscheme jellybeans
+    colorscheme diffcolors
+endif
