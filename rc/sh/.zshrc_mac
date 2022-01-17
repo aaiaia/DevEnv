@@ -1,10 +1,14 @@
+#########################
+# Set custom command path
+export PATH=$HOME/DevEnv/bin/slink:$PATH
+
+#############################
+# Set alias shortened command
+alias vi='vim'
+alias grep="grep --color=auto"
+alias find="find -L"
+alias diff='colordiff'
 alias ls="ls -G"
 alias ll="ls -al"
 
-export PATH=$HOME/DevEnv/bin/slink:$PATH
-
-alias ctags="`brew --prefix`/bin/ctags --exclude={.metadata,.svn,.git}"
-
-alias grep="grep --color=auto"
-
-alias find="find -L"
+alias ctags="`brew --prefix`/bin/ctags --exclude={.metadata,.svn,.git,.github}"
