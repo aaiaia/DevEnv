@@ -25,7 +25,7 @@ elif	[ $# -eq 1 ] ; then
 						!	-iname ".svn"	!	-iname "_*"		!	-iname "Debug"	!	-iname "Release"	\
 						!	-iname "*.bak"	!	-iname "*.log"	!	-iname "*.ncd"	!	-iname "*.ng**"		\
 						!	-iname "*.bit"	!	-iname "*."		!	-iname "*."								\
-						\) | xargs grep -n -w --text --color=auto $1
+						\) | xargs grep -n -w --text --color=auto "$1"
 	exit 1
 elif	[ $# -eq 2 ]; then
 	find -L $1 -type f \(																					\
@@ -35,7 +35,7 @@ elif	[ $# -eq 2 ]; then
 						!	-iname ".svn"	!	-iname "_*"		!	-iname "Debug"	!	-iname "Release"	\
 						!	-iname "*.bak"	!	-iname "*.log"	!	-iname "*.ncd"	!	-iname "*.ng**"		\
 						!	-iname "*.bit"	!	-iname "*."		!	-iname "*."								\
-						\) | xargs grep -n -w --color=auto $2
+						\) | xargs grep -n -w --color=auto "$2"
 	exit 1
 elif	[ $# -eq 3 ]; then
 	find -L $1 -type f \(	-iname $3 -o																	\
@@ -43,7 +43,7 @@ elif	[ $# -eq 3 ]; then
 						!	-iname ".svn"	!	-iname "_*"		!	-iname "Debug"	!	-iname "Release"	\
 						!	-iname "*.bak"	!	-iname "*.log"	!	-iname "*.ncd"	!	-iname "*.ng**"		\
 						!	-iname "*.bit"	!	-iname "*."		!	-iname "*."								\
-						\) | xargs grep -n -w --color=auto $2
+						\) | xargs grep -n -w --color=auto "$2"
 	exit 1
 else
 	echo $0 "!!! Check Syntax"
