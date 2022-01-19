@@ -38,7 +38,7 @@ elif	[ $# -eq 2 ]; then
 						\) | xargs grep -n -w --color=auto "$2"
 	exit 1
 elif	[ $# -eq 3 ]; then
-	find -L $1 -type f \(	-iname $3 -o																	\
+	find -L $1 -type f \(	-iname "$3" -o																	\
 						!	-iname "*.cfg"	!	-iname "*.exe"	!	-iname "*.swp"	!	-iname "tags"		\
 						!	-iname ".svn"	!	-iname "_*"		!	-iname "Debug"	!	-iname "Release"	\
 						!	-iname "*.bak"	!	-iname "*.log"	!	-iname "*.ncd"	!	-iname "*.ng**"		\
