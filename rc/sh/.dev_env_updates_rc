@@ -1,4 +1,5 @@
 #!/bin/sh
+echo '============================================================'
 echo 'Initializing... on "'$SHELL'"'
 #current_path=`pwd -P`
 current_path=`pwd -P`
@@ -15,4 +16,6 @@ git pull
 #echo 'Move to "'$current_path'"'
 cd ~/
 echo 'Move to ~/'
-
+echo 'Updating environments done'
+echo '============================================================'
+echo ''
