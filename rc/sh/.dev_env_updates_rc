@@ -7,7 +7,7 @@ echo 'Current path is "'$current_path'"'
 cd ~/DevEnv
 echo 'Move to "~/DevEnv"'
 
-echo 'Update developments environments using git'
+echo 'Update pleya developments environments using git'
 echo '$ git pull'
 git pull
 
