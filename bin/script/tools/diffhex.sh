@@ -1,5 +1,5 @@
 #!/bin/bash
-usage="Usage:\tCMD [-u|-y] HEX(BIN)_FILE HEX(BIN)FILE"
+usage="Usage:   CMD [-u|-y] HEX(BIN)_FILE HEX(BIN)FILE"
 if [ $# -lt 2 ]; then
 	echo "$usage"
 exit 1
