@@ -1,0 +1,3 @@
+#./setup_env
+export ENV_NAME=DevEnv
+export ENV_HOME=$HOME/$ENV_NAME
