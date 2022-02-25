@@ -3,8 +3,8 @@ BASIC_ENV=../../.setup/env/sh/setup_env
 
 source $BASIC_ENV
 
-LABAL_START="# PleYa Development Enviromnets auto setup, start"
-LABAL_END="# PleYa Development Enviromnets auto setup, end"
+LABAL_START="# Updates PleYa Development Enviromnets auto setup, start"
+LABAL_END="# Updates PleYa Development Enviromnets auto setup, end"
 
 # To set bash(linux)
 BASHRC_FILE=$HOME/.bashrc
