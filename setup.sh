@@ -3,19 +3,31 @@ BASIC_ENV=./.setup/env/sh/setup_env
 
 source $BASIC_ENV
 
-CURRENT_DIR=$PWD
 if	[ -e $BASIC_ENV ]; then
 	chmod 700 $ENV_HOME
 	echo "chmod 700 $ENV_HOME"
 
-	# Config vim colors
-	CURRENT_DIR=$PWD
-	echo "Backup loaction: $CURRENT_DIR"
+    echo "Configuring shell env."
+    cd ./rc/sh
+	echo "Move directory: $PWD"
+	echo "Run setup script..."
+	./setup.sh
+	cd $ENV_HOME
+	echo "Back dirrectory: $PWD"
+
+    echo "Configuring vim env."
 	cd ./vim/colors
 	echo "Move directory: $PWD"
-	echo "Run vim setup script..."
+	echo "Run setup script..."
 	./setup.sh
-	cd $CURRENT_DIR
+	cd $ENV_HOME
+	echo "Back dirrectory: $PWD"
+
+	cd ./rc/vim
+	echo "Move directory: $PWD"
+	echo "Run setup script..."
+	./setup.sh
+	cd $ENV_HOME
 	echo "Back dirrectory: $PWD"
 
 else
