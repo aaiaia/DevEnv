@@ -9,9 +9,15 @@ if	[ ! -e $VIMRC_FILE ]; then
 	echo "touch $VIMRC_FILE"
 fi
 
-
-VIMRC_LABEL="##########\ VIMRC_AUTO_ADD\ ##########"
+VIMRC_LABEL_START="\" PleYa Development Enviromnets auto setup, start"
+VIMRC_LABEL_END="\" PleYa Development Enviromnets auto setup, end"
 VIMRC_COTENTS=`cat $HOME/.vimrc`
-if	[[! "$VIMRC_CONTENS" =~ "$VIMRC_LABEL"]]; then
-fi
 
+if ! grep -q "$VIMRC_LABEL_START" <<< "$VIMRC_COTENTS"; then
+    echo $VIMRC_LABEL_START >> $VIMRC_FILE
+    echo "source $ENV_HOME/rc/vim/vimrc_common" >> $VIMRC_FILE
+    echo $VIMRC_LABEL_END >> $VIMRC_FILE
+    echo "Configured to \"$VIMRC_FILE\""
+else
+    echo "Already configured to \"$VIMRC_FILE\""
+fi
