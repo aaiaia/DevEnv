@@ -3,7 +3,7 @@
 if [ $# -lt 3 ]; then
 echo
 echo "Global REplace: replace string in files globally"
-echo "usage) greplace [PATH] [search_str] [replace_str]"
+echo "usage) greplace [PATH] ['source STRING'] ['replace STRING'] (ex, 'STRING' => 'I want find this string, The string can has space character.')"
 echo
 exit 1
 fi 

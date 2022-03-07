@@ -2,12 +2,15 @@
 
 version="find variables for project folder"
 
-usage="Usage: [CMD] [VARIABLE NAME]\nUsage: [CMD] [PATH] [VARIABLE NAME]\nUsage: [CMD] [PATH] [VARIABLE NAME] [FILE]"
+usage="
+Usage: [CMD] [keyword1] [keyword2] [keyword3] [keyword4] ...
+"
 
 echo "Numer of arguments : $#"
 
 if		[ $# -lt 1 ]; then
 	echo "!!! Check Syntax"
+	echo $usage
 	echo "$0 [keyword1] [keyword2] [keyword3] [keyword4] ... "
 	exit 1
 else

@@ -2,8 +2,10 @@
 
 version="find variables for project folder"
 
-usage="Usage: $0 [VARIABLE NAME]
-    [CMD] [VARIABLE_NAME] [EXTENSIONS_FILE, e.g *.c, default is *.c]"
+usage="
+Usage:  [CMD] [VARIABLE NAME]
+        [CMD] [VARIABLE_NAME] ['FILE_EXTENSIONS', e.g '*.c', default is '*.c']
+"
 
 if		[ $# -lt 1 ]; then
 	echo "$usage"

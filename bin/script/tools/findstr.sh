@@ -2,13 +2,10 @@
 
 version="find variables for project folder"
 
-usage="Usage:   [CMD] [KEYWORD]
-                [CMD] [PATH] [KEYWORD]
-                [CMD] [PATH] [KEYWORD] [\"FILE_EXT\",e.g=\"*.json\",\"*\"(=all file),\"*.*\"(all file has ext)]
-
-                [CMD] [\"String\"]
-                [CMD] [PATH] [\"String\"]
-                [CMD] [PATH] [\"String\"] [\"FILE_EXT\",e.g=\"*.json\",\"*\"(=all file),\"*.*\"(all file has ext)]
+usage="
+Usage:  [CMD] [WORD or 'STRING'] (ex, WORD => keyword, 'STRING' => 'I want find this string, The string can has space character.')
+        [CMD] [PATH] [WORD or 'STRING']
+        [CMD] [PATH] [WORD or 'STRING'] ['FILE_EXTENSIONS',e.g='*.json',\'*'(=all file),'*.*'(all file has ext)]
 "
 echo "Numer of arguments : $#"
 

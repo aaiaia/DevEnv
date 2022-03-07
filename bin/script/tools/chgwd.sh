@@ -3,7 +3,7 @@
 if [ $# -lt 3 ]; then
 echo
 echo "Global REplace: replace string in files globally"
-echo "usage) greplace [PATH] [search_str] [replace_str]"
+echo "usage) greplace [PATH] [source_WORD] [replace_WORD]"
 echo
 exit 1
 fi 
