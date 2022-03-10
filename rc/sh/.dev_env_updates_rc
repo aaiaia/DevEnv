@@ -8,14 +8,21 @@ echo 'Current path is "'$current_path'"'
 cd ~/DevEnv
 echo 'Move to "~/DevEnv"'
 
-echo 'Update pleya developments environments using git'
-echo '$ git pull'
-git pull
+echo 'ping test to "github.com"'
+ping -c 1 -W 1 github.com
+CMD_RESULT=$?
 
-#cd $current_path
-#echo 'Move to "'$current_path'"'
-cd ~/
-echo 'Move to ~/'
-echo 'Updating environments done'
+if [ $CMD_RESULT -eq 0 ]; then
+    echo '=> done'
+    git pull
+    cd ~/
+    echo 'Move to "~"'
+    echo 'Updating environments'
+    echo '=> done'
+else
+    echo '=> fail'
+    echo 'Check internet connections'
+fi
+
 echo '============================================================'
 echo ''
