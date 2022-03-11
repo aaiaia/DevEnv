@@ -1,7 +1,7 @@
 #########################
 # Set custom command path
 export PATH=$HOME/DevEnv/bin/slink:$PATH
-
+echo "add PATH=\"~/DevEnv/bin\""
 #############################
 # Set alias shortened command
 alias vi='vim'
