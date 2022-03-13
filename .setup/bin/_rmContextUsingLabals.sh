@@ -1,5 +1,5 @@
 #!/bin/bash
-BASIC_ENV=.setup/env/sh/setup_env
+BASIC_ENV=../../.setup/env/sh/setup_env
 source $BASIC_ENV
 
 # Print Arguments
