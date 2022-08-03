@@ -8,8 +8,8 @@ echo 'Current path is "'$current_path'"'
 cd ~/DevEnv
 echo 'Move to "~/DevEnv"'
 
-echo 'ping test to "github.com"'
-ping -c 1 -W 1 github.com
+echo 'ping test to "google.com"'
+ping -c 1 -W 1 google.com
 CMD_RESULT=$?
 
 if [ $CMD_RESULT -eq 0 ]; then
