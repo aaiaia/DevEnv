@@ -20,6 +20,8 @@ if [ $CMD_RESULT -eq 0 ]; then
     echo 'Updating environments'
     echo '=> done'
 else
+    cd ~/
+    echo 'Move to "~"'
     echo '=> fail'
     echo 'Check internet connections'
 fi
