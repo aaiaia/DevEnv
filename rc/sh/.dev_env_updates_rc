@@ -15,13 +15,15 @@ CMD_RESULT=$?
 if [ $CMD_RESULT -eq 0 ]; then
     echo '=> done'
     git pull
-    cd ~/
-    echo 'Move to "~"'
     echo 'Updating environments'
     echo '=> done'
+    cd ~/
+    echo 'Move to "~"'
 else
     echo '=> fail'
     echo 'Check internet connections'
+    cd ~/
+    echo 'Move to "~"'
 fi
 
 echo '============================================================'
