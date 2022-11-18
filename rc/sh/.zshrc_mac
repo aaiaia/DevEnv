@@ -14,3 +14,8 @@ alias ls="ls -G"
 alias ll="ls -al"
 
 alias ctags="`brew --prefix`/bin/ctags --exclude={.metadata,.svn,.git,.github}"
+
+# PYENV
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"

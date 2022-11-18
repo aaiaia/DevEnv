@@ -18,3 +18,8 @@ alias ctags='ctags --exclude={.metadata,.svn,.git,.github}'
 
 alias tar_do_gz='tar czvf'
 alias tar_un_gz='tar xzvf'
+
+# PYENV
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
