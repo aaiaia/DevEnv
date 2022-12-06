@@ -8,6 +8,7 @@ set cindent
 set autoindent " 자동 들여쓰기
 set showmatch " 중괄호 하이라이트
 set ruler " 좌표계 표시
+set title " 현재 편집중인 파일 및 경로 표시
 "colorscheme torte " 컬러 스킴
 colorscheme jellybeans " 컬러 스킴
 
