@@ -23,6 +23,3 @@ alias tar_un_gz='tar xzvf'
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
-
-# Rust
-export PATH="$HOME/.cargo/bin:$PATH"
