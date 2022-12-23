@@ -19,3 +19,6 @@ alias ctags="`brew --prefix`/bin/ctags --exclude={.metadata,.svn,.git,.github}"
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+# Rust
+export PATH="$HOME/.cargo/bin:$PATH"
