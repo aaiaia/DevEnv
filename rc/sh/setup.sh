@@ -6,6 +6,9 @@ source $BASIC_ENV
 LABEL_S="# Updates PleYa Development Enviromnets auto setup, start"
 LABEL_E="# Updates PleYa Development Enviromnets auto setup, end"
 
+# check modified self
+$ENV_HOME/.setup/bin/calHash.sh $0 .setup_info # cal hash self
+
 # To set bash(linux)
 BASHRC_FILE=$HOME/.bashrc
 if	[ -e $BASHRC_FILE ]; then

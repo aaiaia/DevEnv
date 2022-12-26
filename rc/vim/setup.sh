@@ -3,6 +3,9 @@ BASIC_ENV=../../.setup/env/sh/setup_env
 
 source $BASIC_ENV
 
+# check modified self
+$ENV_HOME/.setup/bin/calHash.sh $0 .setup_info # cal hash self
+
 VIMRC_FILE=$HOME/.vimrc
 if	[ ! -e $VIMRC_FILE ]; then
 	touch $VIMRC_FILE
