@@ -15,6 +15,7 @@ if	[ -e $BASHRC_FILE ]; then
         echo $LABEL_S >> $BASHRC_FILE
         echo "source $ENV_HOME/rc/sh/.dev_env_updates_rc" >> $BASHRC_FILE
         echo "source $ENV_HOME/rc/sh/.bashrc_linux" >> $BASHRC_FILE
+        echo "source $ENV_HOME/rc/sh/.rust_lang_rc" >> $BASHRC_FILE
         echo $LABEL_E >> $BASHRC_FILE
         echo "Configured to \"$BASHRC_FILE\" for linux"
     else
@@ -31,6 +32,7 @@ if	[ -e $ZSHRC_FILE ]; then
         echo $LABEL_S >> $ZSHRC_FILE
         echo "source $ENV_HOME/rc/sh/.dev_env_updates_rc" >> $ZSHRC_FILE
         echo "source $ENV_HOME/rc/sh/.zshrc_mac" >> $ZSHRC_FILE
+        echo "source $ENV_HOME/rc/sh/.rust_lang_rc" >> $BASHRC_FILE
         echo $LABEL_E >> $ZSHRC_FILE
         echo "Configured to \"$ZSHRC_FILE\" for MaxOS"
     else
