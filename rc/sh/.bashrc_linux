@@ -4,7 +4,15 @@ export  PATH='~/DevEnv/bin/slink':$PATH
 echo "add PATH=\"~/DevEnv/bin\""
 #############################
 # Set alias shortened command
-alias vi='vim'
+# check nvim
+WHICH_NVIM=`which nvim`
+if [ "$WHICH_NVIM" == "" ] ; then
+    echo "'nvim' is not exist, alias 'vim' to 'vi'"
+    alias vi='vim'
+else
+    echo "'nvim' is aliased to 'vi'"
+    alias vi='nvim'
+fi
 alias grep='grep --color=auto'
 alias find='find -L'
 #alias diff='diff --width=$(tput cols)'
