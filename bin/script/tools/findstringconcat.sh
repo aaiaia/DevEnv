@@ -14,7 +14,7 @@ if		[ $# -lt 1 ]; then
 	echo "$0 [keyword1] [keyword2] [keyword3] [keyword4] ... "
 	exit 1
 else
-	for i in $* 
+	for i in $*
 	do
 		concat_str+=$i"\|"
 	done
