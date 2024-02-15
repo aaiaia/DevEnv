@@ -12,6 +12,7 @@ alias diff="`brew --prefix`/bin/colordiff --width=$(tput cols)"
 alias colordiff="`brew --prefix`/bin/colordiff --width=$(tput cols)"
 alias ls="ls -G"
 alias ll="ls -al"
+alias clr='clear'
 
 alias ctags="`brew --prefix`/bin/ctags --exclude={.metadata,.svn,.git,.github}"
 
