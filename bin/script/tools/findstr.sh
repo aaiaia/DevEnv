@@ -24,6 +24,7 @@ elif	[ $# -eq 1 ] ; then
 						-o	-iname "*.vhd"	-o	-iname "*.py"	-o	-iname "*.java"							\
 						!	-iname "*.cfg"	!	-iname "*.exe"	!	-iname "*.swp"	!	-iname "tags"		\
 						!	-iname ".svn"	!	-iname "_*"		!	-iname "Debug"	!	-iname "Release"	\
+						!	-iname ".git"																	\
 						!	-iname "*.bak"	!	-iname "*.log"	!	-iname "*.ncd"	!	-iname "*.ng**"		\
 						!	-iname "*.bit"	!	-iname "*."		!	-iname "*."								\
 						\) | xargs grep -n --text --color=auto "$1"
@@ -34,6 +35,7 @@ elif	[ $# -eq 2 ]; then
 						-o	-iname "*.vhd"	-o	-iname "*.py"	-o	-iname "*.java"							\
 						!	-iname "*.cfg"	!	-iname "*.exe"	!	-iname "*.swp"	!	-iname "tags"		\
 						!	-iname ".svn"	!	-iname "_*"		!	-iname "Debug"	!	-iname "Release"	\
+						!	-iname ".git"																	\
 						!	-iname "*.bak"	!	-iname "*.log"	!	-iname "*.ncd"	!	-iname "*.ng**"		\
 						!	-iname "*.bit"	!	-iname "*."		!	-iname "*."								\
 						\) | xargs grep -n --color=auto "$2"
@@ -42,6 +44,7 @@ elif	[ $# -eq 3 ]; then
 	find -L $1 -type f \(	-iname "$3" -o																	\
 						!	-iname "*.cfg"	!	-iname "*.exe"	!	-iname "*.swp"	!	-iname "tags"		\
 						!	-iname ".svn"	!	-iname "_*"		!	-iname "Debug"	!	-iname "Release"	\
+						!	-iname ".git"																	\
 						!	-iname "*.bak"	!	-iname "*.log"	!	-iname "*.ncd"	!	-iname "*.ng**"		\
 						!	-iname "*.bit"	!	-iname "*."		!	-iname "*."								\
 						\) | xargs grep -n --color=auto "$2"
