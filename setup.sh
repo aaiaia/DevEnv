@@ -16,7 +16,14 @@ if	[ -e $BASIC_ENV ]; then
 	echo "Back dirrectory: $PWD"
 
     echo "Configuring vim env."
-	cd ./vim/colors
+	cd ./vim
+	echo "Move directory: $PWD"
+    cd ./colors
+	echo "Move directory: $PWD"
+	echo "Run setup script..."
+	./setup.sh
+    cd ../
+    cd ./syntax
 	echo "Move directory: $PWD"
 	echo "Run setup script..."
 	./setup.sh
