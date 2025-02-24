@@ -2,6 +2,8 @@ set nocompatible
 set nu " 라인 표시
 if has("syntax")
 	syntax enable " 언어 문법 활성
+    set re=0
+    set rdt=0
 endif
 set hlsearch " 검색 문자열 하이라이트
 set cindent
@@ -9,8 +11,10 @@ set autoindent " 자동 들여쓰기
 set showmatch " 중괄호 하이라이트
 set ruler " 좌표계 표시
 set title " 현재 편집중인 파일 및 경로 표시
+set cursorline " 현재 선택된 라인 하이라이트
 "colorscheme torte " 컬러 스킴
-colorscheme jellybeans " 컬러 스킴
+"colorscheme jellybeans " 컬러 스킴
+colorscheme angr " 컬러 스킴
 
 set nowrap " 한 라인이 화면의 너비를 초과할 경우 줄 바꿈 안함
 
