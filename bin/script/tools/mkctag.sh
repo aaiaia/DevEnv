@@ -1,3 +1,3 @@
 #!/bin/sh
-ctags -R --exclude={.metadata,.svn}
+ctags -R --exclude={.metadata,.svn,.git}
 

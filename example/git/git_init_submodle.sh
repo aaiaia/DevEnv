@@ -1,0 +1,31 @@
+#!/bin/bash
+SUBMODULE_PATH=()		# declare list of bash
+SUBMODULE_VERSION=()	# declare list of bash
+BASE_PATH=$PWD
+
+SUBMODULE_PATH+=( SUBMODULE_PATH_EXAMPLE_0 )
+SUBMODULE_PATH+=( SUBMODULE_PATH_EXAMPLE_1 )
+SUBMODULE_PATH+=( SUBMODULE_PATH_EXAMPLE_2 )
+SUBMODULE_PATH+=( SUBMODULE_PATH_EXAMPLE_3 )
+
+SUBMODULE_VERSION+=( SUBMODULE_TAG_OR_COMMIT_ID_0 )
+SUBMODULE_VERSION+=( SUBMODULE_TAG_OR_COMMIT_ID_1 )
+SUBMODULE_VERSION+=( SUBMODULE_TAG_OR_COMMIT_ID_2 )
+SUBMODULE_VERSION+=( SUBMODULE_TAG_OR_COMMIT_ID_3 )
+
+# git submodule setup
+git submodule init
+git submodule update
+
+SUBMODULE_NUMBER=${#SUBMODULE_PATH[@]}
+echo submodule number: $SUBMODULE_NUMBER
+
+for ((i=0; i<${SUBMODULE_NUMBER}; i++)); do
+	echo change directory: ${SUBMODULE_PATH[$i]}
+	cd $SUBMODULE_PATH
+	git fetch origin --tags
+	echo submodule version: ${SUBMODULE_VERSION[$i]}
+	git checkout $SUBMODULE_VERSION
+	echo base path: $BASE_PATH	#cd $BASE_PATH
+done
+

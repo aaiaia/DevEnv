@@ -21,10 +21,11 @@ if		[ $# -lt 1 ]; then
 elif	[ $# -eq 1 ] ; then
 	find -L ./ -type f \(																					\
 							-iname "*.c"	-o	-iname "*.cpp"	-o	-iname "*.h"	-o	-iname "*.v"		\
-						-o	-iname "*.vhd"	-o	-iname "*.py"												\
-						-o	-iname "*.java"	-o	-iname "*.html"	-o	-iname "*.ccs"							\
+					-o	-iname "*.vhd"	-o	-iname "*.py"	-o	-iname "*.java" -o  -iname "*.puml"		\
+					-o	-iname "*.html"	-o	-iname "*.ccs"	\
 						!	-iname "*.cfg"	!	-iname "*.exe"	!	-iname "*.swp"	!	-iname "tags"		\
 						!	-iname ".svn"	!	-iname "_*"		!	-iname "Debug"	!	-iname "Release"	\
+						!	-iname ".git"																	\
 						!	-iname "*.bak"	!	-iname "*.log"	!	-iname "*.ncd"	!	-iname "*.ng**"		\
 						!	-iname "*.bit"	!	-iname "*."		!	-iname "*."								\
 						\) | xargs grep -n --text --color=auto "$1"
@@ -32,10 +33,11 @@ elif	[ $# -eq 1 ] ; then
 elif	[ $# -eq 2 ]; then
 	find -L $1 -type f \(																					\
 							-iname "*.c"	-o	-iname "*.cpp"	-o	-iname "*.h"	-o	-iname "*.v"		\
-						-o	-iname "*.vhd"	-o	-iname "*.py"												\
-						-o	-iname "*.java"	-o	-iname "*.html"	-o	-iname "*.ccs"							\
+					-o	-iname "*.vhd"	-o	-iname "*.py"	-o	-iname "*.java" -o  -iname "*.puml"		\
+					-o	-iname "*.html"	-o	-iname "*.ccs"	\
 						!	-iname "*.cfg"	!	-iname "*.exe"	!	-iname "*.swp"	!	-iname "tags"		\
 						!	-iname ".svn"	!	-iname "_*"		!	-iname "Debug"	!	-iname "Release"	\
+						!	-iname ".git"																	\
 						!	-iname "*.bak"	!	-iname "*.log"	!	-iname "*.ncd"	!	-iname "*.ng**"		\
 						!	-iname "*.bit"	!	-iname "*."		!	-iname "*."								\
 						\) | xargs grep -n --color=auto "$2"
@@ -44,6 +46,7 @@ elif	[ $# -eq 3 ]; then
 	find -L $1 -type f \(	-iname "$3" -o																	\
 						!	-iname "*.cfg"	!	-iname "*.exe"	!	-iname "*.swp"	!	-iname "tags"		\
 						!	-iname ".svn"	!	-iname "_*"		!	-iname "Debug"	!	-iname "Release"	\
+						!	-iname ".git"																	\
 						!	-iname "*.bak"	!	-iname "*.log"	!	-iname "*.ncd"	!	-iname "*.ng**"		\
 						!	-iname "*.bit"	!	-iname "*."		!	-iname "*."								\
 						\) | xargs grep -n --color=auto "$2"
