@@ -21,7 +21,8 @@ if		[ $# -lt 1 ]; then
 elif	[ $# -eq 1 ] ; then
 	find -L ./ -type f \(																					\
 							-iname "*.c"	-o	-iname "*.cpp"	-o	-iname "*.h"	-o	-iname "*.v"		\
-						-o	-iname "*.vhd"	-o	-iname "*.py"	-o	-iname "*.java"							\
+						-o	-iname "*.vhd"	-o	-iname "*.py"												\
+						-o	-iname "*.java"	-o	-iname "*.html"	-o	-iname "*.ccs"							\
 						!	-iname "*.cfg"	!	-iname "*.exe"	!	-iname "*.swp"	!	-iname "tags"		\
 						!	-iname ".svn"	!	-iname "_*"		!	-iname "Debug"	!	-iname "Release"	\
 						!	-iname ".git"																	\
@@ -32,7 +33,8 @@ elif	[ $# -eq 1 ] ; then
 elif	[ $# -eq 2 ]; then
 	find -L $1 -type f \(																					\
 							-iname "*.c"	-o	-iname "*.cpp"	-o	-iname "*.h"	-o	-iname "*.v"		\
-						-o	-iname "*.vhd"	-o	-iname "*.py"	-o	-iname "*.java"							\
+						-o	-iname "*.vhd"	-o	-iname "*.py"												\
+						-o	-iname "*.java"	-o	-iname "*.html"	-o	-iname "*.ccs"							\
 						!	-iname "*.cfg"	!	-iname "*.exe"	!	-iname "*.swp"	!	-iname "tags"		\
 						!	-iname ".svn"	!	-iname "_*"		!	-iname "Debug"	!	-iname "Release"	\
 						!	-iname ".git"																	\
