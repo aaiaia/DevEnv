@@ -15,7 +15,7 @@ replace_string=$3
 find -L $1 \
 -type f \( \
 		-iname "*.c" -o -iname "*.cpp" -o -iname "*.h" -o -iname "*.java" -o -iname "*.v" -o -iname "*.vhd" \
-	-o	-iname "*.java" -o -iname "*.html" -o -iname "*.ccs" \
+	-o	-iname "*.java" -o -iname "*.html" -o -iname "*.ccs" -o -iname "*.py" \
 	!	-iname ".svn" ! -iname "*.bak" \
 \) -exec egrep -l -n "$search_string" {} \; | xargs -i perl -pi -e "s/$search_string/$replace_string/g" {}
 
