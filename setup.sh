@@ -44,6 +44,13 @@ if	[ -e $BASIC_ENV ]; then
 	cd $ENV_HOME
 	echo "Back dirrectory: $PWD"
 
+	cd ./bin/slink
+	echo "Move directory: $PWD"
+	echo "Run setup script..."
+	./setup.sh
+	cd $ENV_HOME
+	echo "Back dirrectory: $PWD"
+
 else
 	echo "Error!!! basic shell environments file is not exist"
 fi
