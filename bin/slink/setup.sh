@@ -34,10 +34,11 @@ SYMBOLIC_LINK_LEN=${#SYMBOLIC_LINK_LIST[@]}
 for ((i=0; i<SYMBOLIC_LINK_LEN; i+=2)); do
     ORIG="${SYMBOLIC_LINK_LIST[i+0]}"
     LINK="${SYMBOLIC_LINK_LIST[i+1]}"
-    echo "ORIG:$ORIG, LINK:$LINK"
     if [ -f "$LINK" ]; then
         rm $LINK
         echo "re-link: $ORIG to  $LINK"
+    else
+        echo "new-link, $ORIG to  $LINK"
     fi
     ln -s $ORIG $LINK
 done
