@@ -1,0 +1,57 @@
+#!/bin/sh
+update_git_prompt()
+{
+    local branch=""
+    local sparse=""
+
+    GIT_PROMPT=""
+
+    # Do not display Git information outside a Git repository
+    if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+        return
+    fi
+
+    # Get the current branch name
+    branch=$(git symbolic-ref --quiet --short HEAD 2>/dev/null)
+
+    # Use the abbreviated commit hash when HEAD is detached
+    if [ -z "${branch}" ]; then
+        branch=$(git rev-parse --short HEAD 2>/dev/null)
+    fi
+
+    # Check whether Sparse Checkout is enabled
+    if [ "$(git config --bool core.sparseCheckout 2>/dev/null)" = "true" ]; then
+        sparse="|SPARSE"
+    fi
+
+    # Build the Git prompt string
+    printf -v GIT_PROMPT ' (%s%s)' "${branch}" "${sparse}"
+}
+
+# Update Git information before displaying each prompt
+if [[ "${PROMPT_COMMAND}" != *"update_git_prompt"* ]]; then
+    if [ -n "${PROMPT_COMMAND}" ]; then
+        PROMPT_COMMAND="update_git_prompt;${PROMPT_COMMAND}"
+    else
+        PROMPT_COMMAND="update_git_prompt"
+    fi
+fi
+
+WHICH_GIT=`which git`
+if [ "$WHICH_GIT" == "" ] ; then
+    echo "'git' is not exist'"
+else
+    # Enable variable expansion in PS1
+    shopt -s promptvars
+
+    # Two-line prompt
+    # Line 1: user@host:full-path (branch|SPARSE)
+    # Line 2: command prompt
+    PS1='\[\e[32m\]\u@\h\[\e[0m\]:\[\e[34m\]\w\[\e[33m\]${GIT_PROMPT}\[\e[0m\]\n\$ '
+
+    echo "'git' is exist'"
+    echo "Applied Two-line prompt for git"
+    echo "Line 1: user@host:full-path (branch|SPARSE)"
+    echo "Line 2: command prompt"
+    echo "Update Git branch and Sparse Checkout information"
+fi
