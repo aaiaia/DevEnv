@@ -36,9 +36,9 @@ for ((i=0; i<SYMBOLIC_LINK_LEN; i+=2)); do
     LINK="${SYMBOLIC_LINK_LIST[i+1]}"
     if [ -f "$LINK" ]; then
         rm $LINK
-        echo "re-link: $ORIG to  $LINK"
+        echo "re-link: $ORIG to $LINK"
     else
-        echo "new-link, $ORIG to  $LINK"
+        echo "new-link, $ORIG to $LINK"
     fi
     ln -s $ORIG $LINK
 done
